@@ -1,0 +1,21 @@
+.signUp {
+  display: flex;
+  flex-direction: row;
+  max-height: 820px;
+  max-width: auto;
+}
+
+.backgroundImage {
+  position: relative;
+  display: flex;
+  justify-items: left;
+  height: 820px;
+}
+
+.backgroundGreen {
+  position: absolute;
+  display: flex;
+  float: right;
+  margin-left: 500px;
+  /* background-color: #cfebdb; */
+}

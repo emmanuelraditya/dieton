@@ -1,10 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
 .signUp {
   display: flex;
   flex-direction: row;
   max-height: 820px;
   max-width: auto;
 }
-
+.signUpIntro {
+  margin-top: -20px;
+}
 .backgroundImage {
   position: relative;
   display: flex;
@@ -12,10 +16,208 @@
   height: 820px;
 }
 
-.backgroundGreen {
-  position: absolute;
+.backgroundSolid {
+  position: relative;
+  justify-items: right;
+  margin-left: -250px;
   display: flex;
   float: right;
-  margin-left: 500px;
-  /* background-color: #cfebdb; */
+  width: 60%;
+  height: 820px;
+  background: #cfebdb;
+}
+
+.signUpContent {
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+  text-align: left;
+}
+.logo img {
+  height: auto;
+  width: 150px;
+  margin-top: 10px;
+  margin-left: -20px;
+}
+
+.tagline p {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  text-align: left;
+  color: #8e8e8e;
+  margin-top: -10px;
+}
+
+.form p {
+  font-family: "Poppins", sans-serif;
+}
+
+.form input {
+  display: flex;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  height: 30px;
+  width: 459px;
+  border-radius: 7px;
+  border: 1px solid #0e9c4a;
+}
+
+.passwordWrapper {
+  display: flex;
+  flex-direction: row;
+}
+.passwordWrapper img {
+  height: 24px;
+  width: 24px;
+  margin-top: 6px;
+  margin-left: -30px;
+}
+
+.form input ::placeholder {
+  color: #c4c4c4;
+}
+
+#signUpButton {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  height: 40px;
+  width: 459px;
+  background-color: #0e9c4a;
+  color: white;
+  margin-top: 20px;
+  border-radius: 7px;
+  border: 1px solid #0e9c4a;
+  cursor: pointer;
+}
+
+#signUpButton:hover {
+  background-color: #18b359;
+  border: 1px solid #18b359;
+}
+
+#signUpButton:active {
+  background-color: #095529;
+  border: 1px solid #095529;
+}
+
+#signUpGoogleButton {
+  display: flex;
+  flex-direction: row;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  height: 40px;
+  width: 459px;
+  margin-top: 20px;
+  border-radius: 7px;
+  justify-content: center;
+  align-content: center;
+  padding-top: 5px;
+  gap: 20px;
+  border: 1px solid #0e9c4a;
+  background-color: white;
+  cursor: pointer;
+}
+
+#signUpGoogleButton:hover {
+  border: 1px solid #0e9c4a;
+  background-color: #0e9c4a;
+  color: white;
+}
+
+#signUpGoogleButton:active {
+  background-color: #095529;
+  border: 1px solid #095529;
+}
+
+#signUpGoogleButton img {
+  padding-top: 1px;
+}
+
+#or {
+  padding-left: 225px;
+}
+
+.step {
+  margin-top: 40px;
+}
+
+.measurementWrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.measurementWrapper input {
+  width: calc(425px / 2);
+  row-gap: 500px;
+}
+
+.measurementWrappers input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.measurementWrapper input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.calorieWrapper input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .kcal p {
+    font-size: 15px;
+    display: flex;
+    margin: 0 auto;
+    margin-left: 390px;
+    margin-top: -28px;
+  }
+
+.kg p {
+  font-size: 15px;
+  display: flex;
+  margin: 0 auto;
+  margin-left: 440px;
+  margin-top: -30px;
+}
+
+.heightWrapper .cm p {
+  font-size: 15px;
+  display: flex;
+  margin: 0 auto;
+  margin-left: 435px;
+  margin-top: -30px;
+}
+.cm1 p {
+  font-size: 15px;
+  display: flex;
+  margin: 0 auto;
+  margin-left: -30px;
+  margin-top: 5px;
+}
+
+.cm2 p {
+  font-size: 15px;
+  display: flex;
+  margin: 0 auto;
+  margin-left: -30px;
+  margin-top: 5px;
+}
+
+#thighInputBox {
+  display: flex;
+  margin-left: 28px;
+}
+
+#almostThere {
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+#contentPage3 {
+    width: 600px;
+    font-family: "Poppins", sans-serif;
+    flex-wrap: wrap;
 }

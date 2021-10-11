@@ -1,11 +1,14 @@
 import React from 'react'
+import MasterSignUp from '../../components/SignUp/MasterSignUp'
+
 
 function SignUpPage() {
     return (
         <div>
-            ini SignUpPage
+            <MasterSignUp />
+         
         </div>
     )
 }
 
-export default SignUpPage
+export default SignUpPage;

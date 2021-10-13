@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import background from "../../assets/signUp/background.svg";
 import DietOnLogo from "../../assets/signUp/LogoDietOn.svg";
-import styles from "./SignIn.module.css";
+import styles from "./signIn.module.css";
 import GoogleLogo from "../../assets/signUp/googleLogo.svg";
 import showPasswordImg from "../../assets/signUp/showEye.svg";
 import hidePasswordImg from "../../assets/signUp/hideEye.svg";

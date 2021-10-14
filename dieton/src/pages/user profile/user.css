@@ -1,0 +1,32 @@
+.backgroundImage   {
+  height: 400px;
+}
+
+.profileUser img {
+	width:200px;
+	height: 200px;
+	border-radius:110px;
+  border: 7px solid #0E9C4A;
+  margin-left: 550px;
+  margin-top: 200px;
+  display: block;
+  position: absolute;
+}
+
+.pwd-container {
+  position: relative;
+  width: 295px;
+}
+ 
+.pwd-container input {
+  padding: 5px 30px 5px 10px;
+  font-size: 20px;
+}
+ 
+.pwd-container img {
+  cursor: pointer;
+  position: absolute;
+  width: 20px;
+  right: 8px;
+  top: 8px;
+}

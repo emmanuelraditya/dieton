@@ -1,5 +1,6 @@
 import React from "react"
 import "./header.css"
+import Shora from "../../assets/shora.jpg"
 import Bell from "../../assets/Bell.png"
 import Logo from "../../assets/Logo.png"
 
@@ -23,7 +24,7 @@ function Header () {
           {/* <!-- user profile --> */}
           <div className="profile">
             <img
-            src="https://cdn.myanimelist.net/images/characters/12/274345.jpg"
+            src={Shora}
             alt="user profile" />
             {/* <!-- more menu --> */}
             <ul className="menu">

@@ -8,4 +8,4 @@ function CalorieTrackerPage() {
     )
 }
 
-export default CalorieTrackerPage
+export default CalorieTrackerPage;

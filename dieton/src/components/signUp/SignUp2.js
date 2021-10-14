@@ -1,15 +1,36 @@
-import React, { useState } from "react";
+import React from "react";
 import background from "../../assets/signUp/background.svg";
 import DietOnLogo from "../../assets/signUp/LogoDietOn.svg";
 import styles from "./signUp.module.css";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 // import GoogleLogo from "../../assets/signUp/googleLogo.svg";
 
-
-const SignUp2 = props => {
+function SignUp2(props) {
+  const formik = useFormik({
+    initialValues: {
+      weight: "",
+      height: "",
+      waistline: "",
+      thigh: "",
+    },
+    onSubmit: (values) => {
+      console.log("Form data", values);
+      props.next();
+    },
+    validationSchema: Yup.object({
+      weight: Yup.number().required("Required"),
+      height: Yup.number().required("Required"),
+      waistline: Yup.number().required("Required"),
+      thigh: Yup.number().required("Required"),
+    }),
+  });
 
   if (props.currentStep !== 2) {
     return null;
   }
+
+  console.log("Visited field", formik.touched);
 
   return (
     <div className={styles.signUp}>
@@ -18,9 +39,7 @@ const SignUp2 = props => {
       </div>
       <div className={styles.backgroundSolid}>
         <div className={styles.signUpContent}>
-        <div className={styles.step}>
-            {props.step}
-        </div>
+          <div id={styles.step}>{props.step}</div>
           <div className={styles.logo}>
             <img src={DietOnLogo} alt="Diet On" />
           </div>
@@ -30,34 +49,104 @@ const SignUp2 = props => {
           <div className={styles.signUpIntro}>
             <p>No secrets with Diet On!</p>
             <p>
-              Let us now your size, so we can calculate how many calories you need
+              Let us now your size, so we can calculate how many calories you
+              need
             </p>
           </div>
-          <form className={styles.form}>
-            <div className={styles.measurementWrappers}>
+          <form className={styles.form} onSubmit={formik.handleSubmit}>
+            {console.log(formik.values)}
+
+            {/* <div className={styles.measurementWrappers}> */}
             <p>Weight</p>
             <div className={styles.weightWrapper}>
-            <input name="weight" type="number" placeholder="Enter Your Current Weight" />
-            <span className={styles.kg}><p>kg</p></span>
+              <div className={styles.weightInput}>
+                <input
+                  name="weight"
+                  type="number"
+                  placeholder="Enter Your Current Weight (kg)"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.weight}
+                />
+                <div className={styles.formControlWeightSignUpPage2}>
+                  {formik.touched.weight && formik.errors.weight ? (
+                    <div className={styles.error}>{formik.errors.weight}</div>
+                  ) : null}
+                </div>
+              </div>
+              {/* <div className={styles.kg}>
+                <p>kg</p>
+              </div> */}
             </div>
-            <p>Height</p>
             <div className={styles.heightWrapper}>
-            <input name="height" type="number" placeholder="Enter Your Current Height" />
-            <span className={styles.cm}><p>cm</p></span>
+              <p>Height</p>
+              <div className={styles.heightInput}>
+                <input
+                  name="height"
+                  type="number"
+                  placeholder="Enter Your Current Height (cm)"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.height}
+                />
+                <div className={styles.formControlWeightSignUpPage2}>
+                  {formik.touched.height && formik.errors.height ? (
+                    <div className={styles.error}>{formik.errors.height}</div>
+                  ) : null}
+                </div>
+              </div>
+              {/* <div className={styles.cm0}>
+                <p>cm</p>
+              </div> */}
             </div>
+            
             <p>Measurement </p>
             <div className={styles.measurementWrapper}>
-            <input name="waistline" type="number" placeholder="Waistline" />
-            <span className={styles.cm1}><p>cm</p></span>
-            <input id={styles.thighInputBox} name="thigh" type="number" placeholder="Thigh" />
-            <span className={styles.cm2}><p>cm</p></span>
+              <div className={styles.waistlineInput}>
+                <input
+                  name="waistline"
+                  type="number"
+                  placeholder="Waistline (cm)"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.waistline}
+                />
+                <div className={styles.formControlWaistlineSignUpPage2}>
+                  {formik.touched.waistline && formik.errors.waistline ? (
+                    <div className={styles.error}>
+                      {formik.errors.waistline}
+                    </div>
+                  ) : null}
+                </div>
+              </div>
+              {/* <div className={styles.cm1}>
+                <p>cm</p>
+              </div> */}
+              <div>
+                <input
+                  id={styles.thighInputBox}
+                  name="thigh"
+                  type="number"
+                  placeholder="Thigh (cm)"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.thigh}
+                />
+                <div className={styles.formControlThighSignUpPage2}>
+                  {formik.touched.thigh && formik.errors.thigh ? (
+                    <div className={styles.error}>{formik.errors.thigh}</div>
+                  ) : null}
+                </div>
+              </div>
+              {/* <div className={styles.cm2}>
+                <p>cm</p>
+              </div> */}
             </div>
-            </div>
+            {/* </div> */}
             <br />
-            <button 
-            id={styles.signUpButton}
-            onClick={props.next}
-            >Next</button>
+            <button type="submit" id={styles.signUpButton}>
+              Next
+            </button>
             {/* <p id={styles.or}>Or</p>
             <button id={styles.signUpGoogleButton}>
               <img src={GoogleLogo} alt="google" />
@@ -68,6 +157,6 @@ const SignUp2 = props => {
       </div>
     </div>
   );
-}
+};
 
 export default SignUp2;

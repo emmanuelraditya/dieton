@@ -21,6 +21,7 @@ const MultiStepProgressBar = (props) => {
       <div className={`progressBarWrapper`}>
     <ProgressBar percent={stepPercentage}
     filledBackground="#AACC00"
+    height="5px"
     >
       <Step>
           {({ accomplished, index}) => (

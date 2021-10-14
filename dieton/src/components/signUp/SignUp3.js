@@ -1,13 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
 import background from "../../assets/signUp/background.svg";
 import DietOnLogo from "../../assets/signUp/LogoDietOn.svg";
 import styles from "./signUp.module.css";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
-const SignUp3 = (props) => {
+function SignUp3(props) {
+  const formik = useFormik({
+    initialValues: {
+      calorieSize: "",
+    },
+    onSubmit: (values) => {
+      console.log("Form data", values);
+      props.next();
+    },
+    validationSchema: Yup.object({
+      calorieSize: Yup.number().required("Required"),
+    }),
+  });
 
   if (props.currentStep !== 3) {
     return null;
   }
+
+  console.log("Visited field", formik.touched);
 
   return (
     <div className={styles.signUp}>
@@ -16,7 +32,7 @@ const SignUp3 = (props) => {
       </div>
       <div className={styles.backgroundSolid}>
         <div className={styles.signUpContent}>
-          <div className={styles.step}>{props.step}</div>
+          <div id={styles.step}>{props.step}</div>
           <div className={styles.logo}>
             <img src={DietOnLogo} alt="Diet On" />
           </div>
@@ -31,28 +47,35 @@ const SignUp3 = (props) => {
               calorie size for better result
             </p>
           </div>
-          <form className={styles.form}>
+          <form className={styles.form} onSubmit={formik.handleSubmit}>
             <p>Your Calorie Size</p>
             <div className={styles.calorieWrapper}>
               <input
                 name="calorieSize"
                 type="number"
                 placeholder="Ex: 1900 kcal/day"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.calorieSize}
               />
-              <span className={styles.kcal}>
+               <div className={styles.formControlCalorieSizeSignUpPage3}>
+                  {formik.touched.calorieSize && formik.errors.calorieSize ? (
+                    <div className={styles.error}>{formik.errors.calorieSize}</div>
+                  ) : null}
+                </div>
+              {/* <span className={styles.kcal}>
                 <p>kcal/day</p>
-              </span>
+              </span> */}
             </div>
             <br />
-            <button 
-            id={styles.signUpButton}
-             onClick={props.next}
-            >Next</button>
+            <button type="submit" id={styles.signUpButton}>
+              Next
+            </button>
           </form>
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default SignUp3;

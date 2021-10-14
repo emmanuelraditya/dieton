@@ -1,17 +1,12 @@
 import React, { Component } from "react";
 import MultiStepProgressBar from "./MultiStepProgressBar";
-import SignUp from "./SignUp";
+import SignUp from "./signUp";
 import SignUp2 from "./SignUp2";
 import SignUp3 from "./SignUp3";
 import SignUp4 from "./SignUp4";
 import {
-  Form,
-  Button,
   Card,
-  CardBody,
-  CardTitle,
-  CardText,
-  CardFooter,
+  CardBody
 } from "reactstrap";
 
 export default class MasterSignUp extends Component {
@@ -89,7 +84,8 @@ get renderMultiStep() {
   render() {
     return (
         <>
-        <Form onSubmit={this.handleSubmit}>
+        {/* <Form onSubmit={this.handleSubmit}> */}
+        <div>
             <Card>
             <CardBody>
                 <SignUp
@@ -126,7 +122,8 @@ get renderMultiStep() {
                 />
             </CardBody>
             </Card>
-        </Form>
+            </div>
+        {/* </Form> */}
         </>
     )
   }

@@ -1,0 +1,93 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.todayEditWrapper {
+  display: flex;
+}
+
+.todayMealPlan {
+  padding-left: 70px;
+}
+
+.todayMealPlan p {
+  font-weight: bold;
+}
+
+.editMealPlan {
+  margin-left: auto;
+  padding-right: 70px;
+}
+
+.editMealPlan a {
+  text-decoration: none;
+  color: #0e9c4a;
+}
+
+.editMealPlan a:hover {
+  color: #095529;
+}
+
+.mealPlanBox {
+  display: flex;
+  margin-left: -52%;
+}
+
+.mealPlanBox2 {
+  display: flex;
+  margin-left: -52%;
+  margin-top: 24px;
+}
+
+.mealPlanBox3 {
+    display: flex;
+    margin-left: -52%;
+    margin-top: 24px;
+  }
+
+.breakfastLogo {
+  float: left;
+  padding-top: 14px;
+  padding-left: 37px;
+  width: 66px;
+  height: 66px;
+}
+
+.breakfast {
+  float: left;
+  position: absolute;
+  padding-top: 30px;
+  padding-left: 200px;
+  font-size: 22px;
+  text-align: left;
+
+}
+
+.calories {
+  float: left;
+  padding-top: 30px;
+  padding-left: 500px;
+  line-height: 10px;
+  font-size: 22px;
+  text-align: left;
+  position: absolute;
+}
+
+.sliceSpoon {
+  float: left;
+  padding-top: 30px;
+  margin-left: 800px;
+  line-height: 10px;
+  font-size: 22px;
+  text-align: left;
+  position: absolute;
+}
+
+.mealName {
+  float: right;
+  padding-top: 30px;
+  padding-right: 37px;
+  line-height: 10px;
+  font-size: 22px;
+  text-align: right;
+}

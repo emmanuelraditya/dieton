@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import LandingPage from '../../components/landingPage/landingPage';
 
 function LandingPages() {
     return (
         <div>
-            ini LandingPages
+           <LandingPage />
         </div>
     )
 }
 
-export default LandingPages
+export default LandingPages;

@@ -7,6 +7,7 @@ import showPasswordImg from "../../assets/signUp/showEye.svg";
 import hidePasswordImg from "../../assets/signUp/hideEye.svg";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { Link } from "react-router-dom";
 
 
 const initialValues = {
@@ -119,17 +120,20 @@ function SignIn() {
               </div>
             </div>
             <br />
+            <Link to="/HomePage">
             <button 
             id={styles.signInButton} 
             type="submit"
             >
               Sign In
             </button>
+            </Link>
             <p id={styles.or}>Or</p>
             <button id={styles.signInGoogleButton}>
               <img src={GoogleLogo} alt="google" />
               Sign In With Google
             </button>
+           
             <div className={styles.toSignUp}>
               <p>Didn't have an account? <a href="/signuppage">Sign Up</a> </p>
               

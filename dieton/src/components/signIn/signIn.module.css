@@ -118,6 +118,7 @@
 }
 
 #signInGoogleButton {
+  text-decoration: none;
   display: flex;
   flex-direction: row;
   font-family: "Poppins", sans-serif;

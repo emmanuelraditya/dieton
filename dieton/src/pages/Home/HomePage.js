@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import HomeNewUser from '../../components/homeUser/homeUser';
 
 function HomePage() {
     return (
         <div>
-            ini Home
+            <HomeNewUser />
         </div>
     )
 }
 
-export default HomePage
+export default HomePage;

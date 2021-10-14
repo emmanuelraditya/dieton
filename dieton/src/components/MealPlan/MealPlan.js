@@ -5,10 +5,12 @@ import { Box, Container } from "@mui/material";
 import breakfastLogo from "../../assets/MealPlan/breakfast.svg";
 import lunchLogo from "../../assets/MealPlan/lunch.svg";
 import dinnerLogo from "../../assets/MealPlan/dinner.svg";
+import Calender from "../calender/calender";
 
 function MealPlan() {
   return (
     <>
+    <Calender />
       <div className={styles.mealPlanWrapper}>
         <div className={styles.todayEditWrapper}>
           <div className={styles.todayMealPlan}>

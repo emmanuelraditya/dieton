@@ -55,16 +55,17 @@
 
 .breakfast {
   float: left;
-  padding-top: 12px;
+  position: absolute;
+  padding-top: 30px;
   padding-left: 200px;
   font-size: 22px;
   text-align: left;
-  position: absolute;
+
 }
 
 .calories {
   float: left;
-  padding-top: 8px;
+  padding-top: 30px;
   padding-left: 500px;
   line-height: 10px;
   font-size: 22px;
@@ -74,7 +75,7 @@
 
 .sliceSpoon {
   float: left;
-  padding-top: 8px;
+  padding-top: 30px;
   margin-left: 800px;
   line-height: 10px;
   font-size: 22px;
@@ -84,7 +85,7 @@
 
 .mealName {
   float: right;
-  padding-top: 8px;
+  padding-top: 30px;
   padding-right: 37px;
   line-height: 10px;
   font-size: 22px;

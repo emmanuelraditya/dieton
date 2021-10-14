@@ -7,6 +7,7 @@ import CaloriToday from "../../assets/CaloriToday.png"
 import Vector from "../../assets/Vector.png"
 import Meal from "../../assets/Meal.png"
 import Excercise from "../../assets/Excercise.png"
+import SideNavbar from "../SideNavbar/SideNavbar"
 
 function HomeNewUser () {
 
@@ -18,6 +19,7 @@ function HomeNewUser () {
 
   return (
     <React.Fragment>
+      <SideNavbar />
       <div className="weekPlans">
         <h2>This Week Plans</h2>
       </div>

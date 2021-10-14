@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import MealPlan from '../../components/MealPlan/MealPlan';
 
 function MealPlanPage() {
     return (
         <div>
-            ini MealPlan
+          <MealPlan />
         </div>
     )
 }
 
-export default MealPlanPage
+export default MealPlanPage;

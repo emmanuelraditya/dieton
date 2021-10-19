@@ -1,10 +1,10 @@
 import React from 'react';
-import MealPlan from '../../components/MealPlan/MealPlan';
-import MealPlanNew from '../../components/MealPlan/MealPlanNew';
+import AddNewMealPlan from '../../components/MealPlan/addNewMealPlan';
 import SideNavbar from '../../components/SideNavbar/SideNavbar';
 import styles from "./MealPlan.module.css";
+import JSONDATA from "../../MOCK_DATA.json";
 
-function MealPlanPage() {
+function AddNewMealPlanPage() {
     return (
         <>
         <div className={styles.mealPlanAll}>
@@ -12,12 +12,12 @@ function MealPlanPage() {
               <SideNavbar />
           </div>
           <div  className={styles.mealPlan}>
-          <MealPlanNew />
+          <AddNewMealPlan data={JSONDATA} />
           </div>
         </div>
         </>
     )
 }
 
-export default MealPlanPage;
+export default AddNewMealPlanPage;
 

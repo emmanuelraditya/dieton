@@ -1,10 +1,12 @@
 import React from 'react';
 import MasterSignUp from '../../components/signUp/MasterSignUp';
+import styles from "./SignUp.module.css";
 
 
 function SignUpPage() {
     return (
-        <div>
+        <div className={styles.SignUp}>
+            
             <MasterSignUp />
          
         </div>

@@ -1,0 +1,13 @@
+.homeAll {
+  display: flex;
+}
+
+.sideNavbar {
+  /* background-color: blue; */
+  width: 300px;
+  height: 100vh;
+}
+
+.home {
+  flex: 1;
+}

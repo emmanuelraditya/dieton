@@ -10,7 +10,20 @@ import Calender from "../calender/calender";
 function MealPlan() {
   return (
     <>
-    <Calender />
+    <div className={styles.addWrapper}>
+          <div className={styles.textMealPlan}>
+            <p>Meal Plans</p>
+          </div>
+          <div className={styles.addMealPlan}>
+            <Link to="#">
+              {" "}
+              <p>add Meal Plan</p>{" "}
+            </Link>
+          </div>
+        </div>
+    <div className={styles.calender}>
+    <Calender  />
+    </div>
       <div className={styles.mealPlanWrapper}>
         <div className={styles.todayEditWrapper}>
           <div className={styles.todayMealPlan}>
@@ -30,7 +43,7 @@ function MealPlan() {
             sx={{
               bgcolor: "#CFEBDB",
               height: "100px",
-              width: "1300px",
+              width: "1000px",
               borderRadius: "10px",
               boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
             }}
@@ -62,13 +75,13 @@ function MealPlan() {
             sx={{
               bgcolor: "white",
               height: "100px",
-              width: "1300px",
+              width: "1000px",
               borderRadius: "10px",
               boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
             }}
           >
             <div className={styles.breakfastLogo}>
-              <img src={lunchLogo } alt="breakfast" />
+              <img src={lunchLogo } alt="lunch" />
             </div>
             <div className={styles.breakfast}>
               <p>Lunch</p>
@@ -94,7 +107,7 @@ function MealPlan() {
             sx={{
               bgcolor: "#CFEBDB",
               height: "100px",
-              width: "1300px",
+              width: "1000px",
               borderRadius: "10px",
               boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
             }}

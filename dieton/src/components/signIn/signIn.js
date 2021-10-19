@@ -39,7 +39,7 @@ const onSubmit = (values) => {
 // }
 
 const validationSchema = Yup.object({
-  email: Yup.string().email("Invalid email format").required("Required"),
+  email: Yup.string().email("Invalid Format").required("Required"),
   password: Yup.string().required("Required"),
 });
 
@@ -79,6 +79,7 @@ function SignIn() {
             {console.log(formik.values)}
 
             <p id={styles.email}>Email</p>
+            <div className={styles.emailWrapper}>
             <input
               type="email"
               placeholder="Enter Email Address"
@@ -92,11 +93,14 @@ function SignIn() {
                 <div className={styles.error}>{formik.errors.email}</div>
               ) : null}
             </div>
-
-            <p>Password</p>
+            </div> <br />
+            {/* <div id={styles.password}> */}
+            <p id={styles.password}>Password</p>
+            {/* </div> */}
             <div className={styles.passwordWrapper}>
               <input
                 name="password"
+                id={styles.passwordInput}
                 placeholder="Enter your password"
                 type={isRevealPassword ? "text" : "password"}
                 value={(password, formik.values.password)}

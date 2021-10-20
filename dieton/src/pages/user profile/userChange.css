@@ -1,0 +1,31 @@
+.formChange {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-left: 100px;
+}
+
+.inputChange {
+  width: 450px;
+  margin-bottom: 20px;
+  border-style: solid;
+  border-color: #4CAF50;
+}
+
+.formGroup {
+  margin-left: 300px;
+}
+
+.formIcon {
+  display: flex;
+}
+
+.formIcon img {
+  height: 30px;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.btnSave {
+  float: right;
+  margin-top: 0px;
+}

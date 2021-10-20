@@ -8,6 +8,8 @@ import Vector from "../../assets/Vector.png"
 import Meal from "../../assets/Meal.png"
 import Excercise from "../../assets/Excercise.png"
 import SideNavbar from "../SideNavbar/SideNavbar"
+import { Link } from "react-router-dom"
+
 
 function HomeNewUser () {
 
@@ -28,7 +30,7 @@ function HomeNewUser () {
       <div>
         <div className="tracker">
           <h3>Calori Traker</h3>
-          <div className="caloriNewUser" >
+          <Link to="/calorietrackerpage" className="caloriNewUser" >
             <div className="iconCalori">
               <img className="caloriRemaining"
               src={CaloriRemaining}
@@ -59,7 +61,7 @@ function HomeNewUser () {
                 <p className="caloriTittle">Calorie Target</p>
               </div>
             </div>
-        </div>
+        </Link>
               {show ?
                <div className="mealPlan">
                <div className="imgMeal">

@@ -23,6 +23,7 @@ function Routes() {
                 <Route path='/mealplanpage' component={MealPlanPage} />
                 <Route path='/weightmeasurementpage' component={WeightMeasurementPage} />
                 <Route path='/user' component={User} />
+                <Route path=''/>
             </Switch>
         </Router>
     )

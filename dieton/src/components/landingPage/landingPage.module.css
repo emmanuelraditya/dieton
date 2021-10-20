@@ -234,17 +234,9 @@
 }
 
 .footer{
-    background:rgba(170, 204, 0, 1);
+    
     height: 419px;
     
 }
-
-.about{
-    width: 64px;
-    height: 31px;
-    
-    margin-top: 117px;
-    margin-left: 70px;
-    font-size: 18px;
-}   
+   
 

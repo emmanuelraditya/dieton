@@ -6,7 +6,7 @@ import Box from "@mui/material/Box";
 import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
 import JSONDATA from "../../MOCK_DATA.json";
-import "./SearchBar.css";
+import styles from "./SearchBar.css";
 import { Link } from "react-router-dom";
 
 const Search = styled("div")(({ theme }) => ({
@@ -103,9 +103,9 @@ export default function SearchBar() {
             })
             .map((val, key) => {
               return (
-                <div className="user" key={key}>
+                <div className={styles.user} key={key}>
                  <Link to="/addfoodmealplanpage">
-                     <p style={{ fontSize: "18px", textAlign: "center" }} >
+                     <p style={{ fontSize: "18px", textAlign: "center", textDecoration: "none" }} >
                     {val.food}
                   </p> </Link>
               
@@ -118,64 +118,3 @@ export default function SearchBar() {
   );
 }
 
-// import React, { useState } from "react";
-// import "./SearchBar.css";
-// import SearchIcon from "@material-ui/icons/Search";
-// import CloseIcon from "@material-ui/icons/Close";
-
-// function SearchBar({ placeholder, data }) {
-//   const [filteredData, setFilteredData] = useState([]);
-//   const [wordEntered, setWordEntered] = useState("");
-
-//   const handleFilter = (event) => {
-//     const searchWord = event.target.value;
-//     setWordEntered(searchWord);
-//     const newFilter = data.filter((value) => {
-//       return value.food.toLowerCase().includes(searchWord.toLowerCase());
-//     });
-
-//     if (searchWord === "") {
-//       setFilteredData([]);
-//     } else {
-//       setFilteredData(newFilter);
-//     }
-//   };
-
-//   const clearInput = () => {
-//     setFilteredData([]);
-//     setWordEntered("");
-//   };
-
-//   return (
-//     <div className="search">
-//       <div className="searchInputs">
-//         <input
-//           type="text"
-//           placeholder={placeholder}
-//           value={wordEntered}
-//           onChange={handleFilter}
-//         />
-//         <div className="searchIcon">
-//           {filteredData.length === 0 ? (
-//             <SearchIcon />
-//           ) : (
-//             <CloseIcon id="clearBtn" onClick={clearInput} />
-//           )}
-//         </div>
-//       </div>
-//       {filteredData.length != 0 && (
-//         <div className="dataResult">
-//           {filteredData.slice(0, 15).map((value, key) => {
-//             return (
-//               <a className="dataItem" href={value.kcal} target="_self" key={key}>
-//                 <p>{value.title} </p>
-//               </a>
-//             );
-//           })}
-//         </div>
-//       )}
-//     </div>
-//   );
-// }
-
-// export default SearchBar;

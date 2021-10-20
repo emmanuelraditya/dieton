@@ -317,6 +317,7 @@
 .iconAddWrapper .addIcon img {
   width: 21.33px;
   height: 21.33px;
+  margin-left: -80px;
 }
 .iconAddWrapper {
   color: #8e8e8e;
@@ -345,7 +346,7 @@
     place-content: center;
     justify-content: center;
     padding-top: 50px;
-    gap: 10px;
+    gap: 20px;
     font-size: 22px;
   }
 
@@ -442,3 +443,16 @@
 .btnAdd button:hover {
     background-color: #095529 ;
 }
+
+
+.searchBarWrapper {
+    display: flex;
+    flex-direction: column;
+    column-gap: 5px;
+    place-content: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 40px;
+    font-size: 22px;
+  }
+  

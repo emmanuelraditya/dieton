@@ -7,6 +7,7 @@ import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
 import JSONDATA from "../../MOCK_DATA.json";
 import "./SearchBar.css";
+import { Link } from "react-router-dom";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -97,15 +98,16 @@ export default function SearchBar() {
               } else if (
                 value.food.toLowerCase().includes(searchTerm.toLowerCase())
               ) {
-                return `<form>${value} <button>add</button></form>`;
+                return value;
               }
             })
             .map((val, key) => {
               return (
                 <div className="user" key={key}>
-                 <p style={{ fontSize: "18px", textAlign: "center" }} >
+                 <Link to="/signinpage">
+                     <p style={{ fontSize: "18px", textAlign: "center" }} >
                     {val.food}
-                  </p>
+                  </p> </Link>
               
                 </div>
               );

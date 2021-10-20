@@ -1,4 +1,8 @@
 import React from "react"
+import {
+  BrowserRouter as
+  Route
+} from "react-router-dom";
 import "./header.css"
 import Shora from "../../assets/shora.jpg"
 import Bell from "../../assets/Bell.png"
@@ -28,8 +32,9 @@ function Header () {
             alt="user profile" />
             {/* <!-- more menu --> */}
             <ul className="menu">
-              <li>My Profile</li>
-              <li>Log out</li>
+              <li><a href="/User">Profile</a></li>
+              <Route path={`/User`} />
+              <li className="logOut">Log out</li>
               {/* <li><a href="#">Log out</a></li> */}
             </ul>
           </div>

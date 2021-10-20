@@ -4,23 +4,25 @@ import CaloriRemaining from "../../assets/CaloriRemaining.png"
 import CaloriTarget from "../../assets/CaloriTarget.png"
 import CaloriToday from "../../assets/CaloriToday.png"
 import Breakfast from "../../assets/Breakfast.png"
-import { Row, Col, Modal, Button, Form } from 'react-bootstrap'
+import { Row, Col, Modal, Button, Form, CloseButton} from 'react-bootstrap'
 
 function MyVerticallyCenteredModal(props) {
     return (
-    
+    <div>
       <Modal className="modalCalo"
         {...props}
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered>
-            <div className="modalBody">
+            <CloseButton className="closeBtn"onClick={props.onHide}/> 
+            <div className="modalBody" closeButton>
             <div className="modalTitle">Change Calorie Target</div>
             <div className="modalIsi">You can change your current calorie target to your new calorie target by filling in the fields below.</div>
             <Form.Control className="modalInput" type="kcal" placeholder="1400 Kcal"/>
             <Button className="modalSave" onClick={props.onHide}>Save</Button>
         </div>         
-      </Modal>    
+      </Modal> 
+    </div>
     );
   }    
 

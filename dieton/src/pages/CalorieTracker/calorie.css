@@ -158,6 +158,8 @@
     border: 2px solid #0E9C4A!important;
   }
 
-  
-
+  .closeBtn{
+    position: absolute;
+    margin-left: 40rem;
+  }
   

@@ -34,9 +34,6 @@ function AddFoodMealPlan() {
           <Box
             sx={{
               bgcolor: "#CFEBDB",
-              position: "relative",
-              // order: "2",
-              zIndex: "5",
               height: "135px",
               width: "1000px",
               borderRadius: "10px",
@@ -54,7 +51,7 @@ function AddFoodMealPlan() {
               height: "200px",
               width: "1000px",
               overflow: "scroll",
-              marginTop: "0px"
+              marginTop: "7px"
             }}
           >
             <div className={styles.rowFoodWrapper}>

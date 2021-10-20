@@ -117,3 +117,8 @@
 .row #title {
     flex: 70%;
 }
+
+#userProfile a {
+    text-decoration: none;
+    color:black;
+}

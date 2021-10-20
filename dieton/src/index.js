@@ -8,6 +8,7 @@ import { applyMiddleware,createStore,compose } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './redux/reducers';
 import'bootstrap/dist/css/bootstrap.min.css';
+// import Header from './components/header/header';
 
 
 
@@ -21,6 +22,7 @@ const store = createStore(
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
+      {/* <Header /> */}
     <App />
     </Provider>
   </React.StrictMode>,

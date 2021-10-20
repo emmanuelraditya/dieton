@@ -126,9 +126,9 @@
   text-align: right;
 }
 
-.calender {
-  margin-left: -10%;
-}
+/* .calender {
+  margin-left: 50px;
+} */
 
 /* MealplanNew */
 
@@ -160,9 +160,9 @@
   color: #095529;
 }
 
-.calenderNew {
+/* .calenderNew {
   margin-left: -10%;
-}
+} */
 
 .todayEditWrapperNew {
   display: flex;
@@ -192,7 +192,7 @@
 
 .addNewLogos img {
   /* margin: 0 auto; */
-  margin-left: 500px;
+  margin-left: 550px;
   margin-top: 76.33px;
   width: 160px;
   height: 161.33px;
@@ -201,7 +201,7 @@
 .addParagraph p {
   font-family: "Poppins", sans-serif;
   margin-top: 35px;
-  margin-left: 330px;
+  margin-left: 400px;
 }
 
 .addParagraph a {

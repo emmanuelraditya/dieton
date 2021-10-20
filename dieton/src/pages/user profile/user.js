@@ -4,7 +4,6 @@ import Background from "../../assets/Background.png"
 import "./user.css"
 import UserChange from "./userChange";
 import UserProfile from "./userProfile";
-import SideNavbar from "../../components/SideNavbar/SideNavbar";
 function User () {
 
 

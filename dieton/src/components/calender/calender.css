@@ -1,11 +1,12 @@
 .dateDisplay {
   display: flex !important;
-  margin-left: 20px;
+  margin-left: 40px;
+  margin-top: 20px;
 }
 
 .dayDisplay {
   display: flex !important;
-  margin-left: 30px;
+  margin-left: 49px;
 }
 
 .Calender {
@@ -14,9 +15,16 @@
 }
 
 .displayDate {
-  margin-left: 200px;
+  margin-left: 150px;
   margin-bottom: 20px;
 }
 .displayDay  {
   display: flex !important;
+}
+
+.displayDate a {
+  font-size: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  cursor: pointer;
 }

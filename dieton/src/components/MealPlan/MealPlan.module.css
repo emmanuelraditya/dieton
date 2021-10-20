@@ -337,6 +337,7 @@
 }
 
 
+
 /* Add New Meal Plan */
 .iconAddNewWrapper {
     display: flex;
@@ -348,3 +349,96 @@
     font-size: 22px;
   }
 
+/* Add Food Row */
+
+.rowFoodWrapper {
+    display: flex;
+    flex-direction: row;
+    padding-top: 43px;
+    font-size: 18px;
+    text-align: center;
+    justify-content: left;
+}
+
+.rowFoodWrapper2 {
+    display: flex;
+    flex-direction: row;
+    padding-top: calc(43px *2);
+    font-size: 18px;
+    text-align: center;
+    justify-content: left;
+    margin-top:-20px;
+}
+
+
+.rowFoodWrapper3 {
+    display: flex;
+    flex-direction: row;
+    padding-top: calc(43px *2);
+    font-size: 18px;
+    text-align: center;
+    justify-content: left;
+    margin-top:-20px;
+}
+
+.foodName {
+    padding-left: 50px;
+    padding-top: 10px;
+    text-align: left !important;
+}
+
+.inputSlice {
+    margin-left: 82px;
+}
+
+.inputSlice1 {
+    margin-left: 140px;
+}
+
+.inputSlice1 input {
+    width: 83px;
+    height: 48px;
+    border-radius: 10px;
+    border: 1px solid #0E9C4A;
+    text-align: center;
+}
+
+.inputSlice input {
+    width: 83px;
+    height: 48px;
+    border-radius: 10px;
+    border: 1px solid #0E9C4A;
+    text-align: center;
+}
+
+.inputSlice input[type=number]::-webkit-inner-spin-button {
+    background-color: rosybrown;
+}
+.RDA {
+    padding-top: 10px;
+    padding-left: 82px;
+    
+}
+
+.cal {
+    padding-left: 82px;
+    padding-top: 10px;
+}
+
+.btnAdd {
+    /* padding-top: 5px; */
+    padding-left: 32px;
+}
+
+.btnAdd button {
+    width: 92px;
+    height: 48px;
+    border-radius: 10px;
+    background-color: #0e9c4a;
+    border-style: none;
+    color: white;
+}
+
+.btnAdd button:hover {
+    background-color: #095529 ;
+}

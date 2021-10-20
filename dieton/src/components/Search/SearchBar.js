@@ -104,7 +104,7 @@ export default function SearchBar() {
             .map((val, key) => {
               return (
                 <div className="user" key={key}>
-                 <Link to="/signinpage">
+                 <Link to="/addfoodmealplanpage">
                      <p style={{ fontSize: "18px", textAlign: "center" }} >
                     {val.food}
                   </p> </Link>

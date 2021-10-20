@@ -6,6 +6,7 @@ import LandingPages from '../pages/LandingPage/LandingPages';
 import MealPlanPage from '../pages/MealPlan/MealPlanPage';
 import AddMealPlanPage from '../pages/MealPlan/AddMealPlanPage';
 import AddNewMealPlanPage from '../pages/MealPlan/AddNewMealPlanPage';
+import AddFoodMealPlanPage from '../pages/MealPlan/AddFoodMealPlanPage';
 import SignInPage from '../pages/SignIn/SignInPage';
 import SignUpPage from '../pages/SignUp/SignUpPage';
 import WeightMeasurementPage from '../pages/WeightMeasurement/WeightMeasurementPage';
@@ -25,6 +26,7 @@ function Routes() {
                 <Route path='/mealplanpage' component={MealPlanPage} />
                 <Route path='/addmealplanpage' component={AddMealPlanPage} />
                 <Route path='/addnewmealplanpage' component={AddNewMealPlanPage} />
+                <Route path='/addfoodmealplanpage' component={AddFoodMealPlanPage} />
                 <Route path='/weightmeasurementpage' component={WeightMeasurementPage} />
                 <Route path='/user' component={User} />
             </Switch>
@@ -34,21 +36,4 @@ function Routes() {
 export default Routes;
 
 
-// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import homeNewUser from "../components/homeUser/homeUser";
-// import Calender from "../components/calender/calender";
-// import Header from "../components/header/header";
 
-// function Routes() {
-//   return (
-//     <Router>
-//       <Switch>
-//         <Route path="/home" component={homeNewUser} />
-//         <Route path="/c" component={Calender} />
-//         <Route path="/h" component={Header} />
-//       </Switch>
-//     </Router>
-//   );
-// }
-
-// export default Routes

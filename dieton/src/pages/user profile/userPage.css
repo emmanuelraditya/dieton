@@ -1,0 +1,36 @@
+/* .mealPlanAll {
+  display: flex;
+}
+
+.sideNavbar {
+  width: 200px;
+  height: 150vh;
+  position: fixed;
+  z-index: 1;
+}
+
+.mealPlan {
+  width: fit-content;
+  margin-top: 80px;
+  margin-left: 200px;
+  flex: 1;
+} */
+
+.userAll {
+  display: flex;
+}
+
+.sideNavbar {
+  /* background-color: blue; */
+  width: 200px;
+  height: 150vh;
+  position: fixed;
+  z-index: 1;
+}
+
+.user {
+  width: fit-content;
+  margin-top: 80px;
+  margin-left: 200px;
+  flex: 1;
+}

@@ -4,7 +4,7 @@ import Background from "../../assets/Background.png"
 import "./user.css"
 import UserChange from "./userChange";
 import UserProfile from "./userProfile";
-
+import SideNavbar from "../../components/SideNavbar/SideNavbar";
 function User () {
 
 
@@ -25,7 +25,7 @@ function User () {
         <div className="backgroundUser">
           <div className="imgBanner" style=
           {{ backgroundImage: `url(${Background})`,
-          width: '100%',
+          width: '99%',
           height: '357px',
         }}>
             <div className="userButton">

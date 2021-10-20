@@ -10,7 +10,7 @@ import AddFoodMealPlanPage from '../pages/MealPlan/AddFoodMealPlanPage';
 import SignInPage from '../pages/SignIn/SignInPage';
 import SignUpPage from '../pages/SignUp/SignUpPage';
 import WeightMeasurementPage from '../pages/WeightMeasurement/WeightMeasurementPage';
-import User from '../pages/user profile/user';
+import UserPage from '../pages/user profile/userPage';
 
 function Routes() {
     return (
@@ -26,7 +26,7 @@ function Routes() {
                 <Route path='/addnewmealplanpage' component={AddNewMealPlanPage} />
                 <Route path='/addfoodmealplanpage' component={AddFoodMealPlanPage} />
                 <Route path='/weightmeasurementpage' component={WeightMeasurementPage} />
-                <Route path='/user' component={User} />
+                <Route path='/user' component={UserPage} />
             </Switch>
         </Router>
     )

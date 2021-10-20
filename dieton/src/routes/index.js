@@ -8,13 +8,11 @@ import SignInPage from '../pages/SignIn/SignInPage';
 import SignUpPage from '../pages/SignUp/SignUpPage';
 import WeightMeasurementPage from '../pages/WeightMeasurement/WeightMeasurementPage';
 import User from '../pages/user profile/user';
-import Header from '../components/header/header';
 
 function Routes() {
     return (
         <Router>
             <Switch>
-                <Route path='/header' component={Header} />
                 <Route exact path="/" component={LandingPages} />
                 <Route path='/signuppage' component={SignUpPage} />
                 <Route path='/signinpage' component={SignInPage} />

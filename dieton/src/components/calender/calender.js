@@ -31,7 +31,7 @@ function Calender () {
       <div className="displayDay">
         {currentWeek.map(day => (
           <div key={day}>
-            <div className="dateDisplay"> {format(day, "EEEE")} </div>
+            <div className="dateDisplay"> {format(day, "E")} </div>
             <div className="dayDisplay"> {format(day, "dd")} </div>
           </div>
         ))}

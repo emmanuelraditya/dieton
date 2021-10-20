@@ -9,7 +9,7 @@ function UserPage() {
         <div className="sideNavbar">
             <SideNavbar />
         </div>
-        <div  className="mealPlan">
+        <div  className="">
         <User />
         </div>
       </div>

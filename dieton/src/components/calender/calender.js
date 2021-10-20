@@ -24,9 +24,9 @@ function Calender () {
   return(
     <div className="Calender">
       <div className="displayDate">
-        <button onClick={() => setDate(subDays(date, 7))}>{"<"}</button>
+        <a onClick={() => setDate(subDays(date, 7))}>{"<"}</a>
         <span> {format(date, "MMMM yyyy")} </span>
-        <button onClick={() => setDate(addDays(date, 7))}>{">"}</button>
+        <a onClick={() => setDate(addDays(date, 7))}>{">"}</a>
       </div>
       <div className="displayDay">
         {currentWeek.map(day => (

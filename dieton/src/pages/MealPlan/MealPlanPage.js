@@ -1,5 +1,4 @@
 import React from 'react';
-import MealPlan from '../../components/MealPlan/MealPlan';
 import MealPlanNew from '../../components/MealPlan/MealPlanNew';
 import SideNavbar from '../../components/SideNavbar/SideNavbar';
 import styles from "./MealPlan.module.css";

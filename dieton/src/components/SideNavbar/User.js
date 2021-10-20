@@ -68,31 +68,15 @@ export default function User() {
           <div id={styles.userProfile}>
         <Link to="/user">
           <MenuItem>
-            <Avatar /> Profile
+            <Avatar /> My Profile
           </MenuItem>
         </Link>
         </div>
         <MenuItem>
-          <Avatar /> My account
-        </MenuItem>
-        <Divider />
-        <MenuItem>
-          <ListItemIcon>
-            <PersonAdd fontSize="small" />
-          </ListItemIcon>
-          Add another account
-        </MenuItem>
-        <MenuItem>
-          <ListItemIcon>
-            <Settings fontSize="small" />
-          </ListItemIcon>
-          Settings
-        </MenuItem>
-        <MenuItem>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>
-          Logout
+          Sign Out
         </MenuItem>
       </Menu>
     </React.Fragment>

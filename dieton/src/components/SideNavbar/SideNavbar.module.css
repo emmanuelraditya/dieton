@@ -1,8 +1,8 @@
 .horizontalNavbar {
     display: flex;
-    height: 170px;
+    height: 100px;
     background-color:white;
-    width: 1223px;
+    width: 1300px;
     margin-left: 210px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) ;
 }
@@ -31,12 +31,12 @@
     background-color:white;
     margin-left: -300px;
     width: 310px;
-    height: 170px;
+    height: 100px;
     display: flex;
 }
 
 .menuBar svg{
-   margin-left: 150px;
+   margin-left: 180px;
     margin-top: 50px;
     width: 32px;
     height: 32px;
@@ -56,8 +56,8 @@
 
 .logo img {
     height: auto;
-    width: 120px;
-  margin-top: 20px;
+    width: 90px;
+  /* margin-top: 20px; */
     margin-left: -10px;
   }
   
@@ -116,6 +116,9 @@
 
 .row #title {
     flex: 70%;
+    width: 100px;
+    padding-top: 10px;
+    text-align: center;
 }
 
 #userProfile a {

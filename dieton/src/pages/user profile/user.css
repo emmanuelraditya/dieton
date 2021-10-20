@@ -1,3 +1,4 @@
+
 .imgBanner {
   width: 100%;
   object-fit:cover;
@@ -5,7 +6,7 @@
 
 .userButton {
   display: flex;
-  margin-left: 600px;
+  margin-left: 550px;
 
 }
 
@@ -19,7 +20,7 @@
 
 .userSetting {
   margin-top: 280px;
-  margin-left: 450px;
+  margin-left: 400px;
 
 }
 

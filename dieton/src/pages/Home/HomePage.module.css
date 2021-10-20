@@ -1,0 +1,17 @@
+.homeAll {
+  display: flex;
+}
+
+.sideNavbar {
+  /* background-color: blue; */
+  width: 200px;
+  height: 150vh;
+  position: fixed;
+}
+
+.home {
+  width: fit-content;
+  margin-top: 180px;
+  margin-left: 150px;
+  flex: 1;
+}

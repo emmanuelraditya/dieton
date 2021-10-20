@@ -1,10 +1,10 @@
 import React from 'react';
-import MealPlan from '../../components/MealPlan/MealPlan';
-import MealPlanNew from '../../components/MealPlan/MealPlanNew';
+import AddFoodMealPlan from '../../components/MealPlan/addFoodMealPlan';
 import SideNavbar from '../../components/SideNavbar/SideNavbar';
 import styles from "./MealPlan.module.css";
 
-function MealPlanPage() {
+
+function AddFoodMealPlanPage() {
     return (
         <>
         <div className={styles.mealPlanAll}>
@@ -12,12 +12,12 @@ function MealPlanPage() {
               <SideNavbar />
           </div>
           <div  className={styles.mealPlan}>
-          <MealPlanNew />
+          <AddFoodMealPlan />
           </div>
         </div>
         </>
     )
 }
 
-export default MealPlanPage;
+export default AddFoodMealPlanPage;
 

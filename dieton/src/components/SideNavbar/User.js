@@ -24,7 +24,7 @@ export default function User() {
       <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
         <Tooltip title="Account settings">
           <IconButton onClick={handleClick} size="small" sx={{ ml: 2 }}>
-            <Avatar sx={{ width: 50, height: 50 }}>M</Avatar>
+            <Avatar sx={{ width: 40, height: 40 }}>M</Avatar>
           </IconButton>
         </Tooltip>
       </Box>

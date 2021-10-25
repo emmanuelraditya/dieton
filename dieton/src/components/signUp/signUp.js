@@ -14,16 +14,19 @@ function SignUp(props) {
   const [isRevealPassword, setIsRevealPassword] = useState(false);
   const formik = useFormik({
     initialValues: {
-      name: "",
+      fullName: "",
       email: "",
       password: ""
     },
     onSubmit: values => {
       console.log("Form data", values);
+      props.handleInput1(values);
+
+
       props.next();
     },
     validationSchema: Yup.object({
-      name: Yup.string().required("Required"),
+      fullName: Yup.string().required("Required"),
       email: Yup.string().email("Invalid email format").required("Required"),
       password: Yup.string().required("Required")
     })
@@ -63,16 +66,16 @@ function SignUp(props) {
             {console.log(formik.values)}
             <p id={styles.nameForm}>Name</p>
             <input 
-            name="name" 
+            name="fullName" 
             type="text" 
             placeholder="Enter Your Name"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-            value={formik.values.name}
+            value={formik.values.fullName}
             />
             <div className={styles.formControlNameSignUpPage1}>
-              {formik.touched.name && formik.errors.name ? (
-                <div className={styles.error}>{formik.errors.name}</div>
+              {formik.touched.name && formik.errors.fullName ? (
+                <div className={styles.error}>{formik.errors.fullName}</div>
               ) : null}
             </div>
             <p>Email</p>

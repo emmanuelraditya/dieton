@@ -16,6 +16,7 @@ function SignUp2(props) {
     },
     onSubmit: (values) => {
       console.log("Form data", values);
+      props.handleInput2(values);
       props.next();
     },
     validationSchema: Yup.object({

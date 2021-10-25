@@ -5,15 +5,21 @@ import SignUp from "./signUp";
 import SignUp2 from "./SignUp2";
 import SignUp3 from "./SignUp3";
 import SignUp4 from "./SignUp4";
+// import axios from "axios";
+import { connect } from "react-redux";
+import { getSignUpAsync } from "../../redux/actions";
 
+// fetch('https://test-diet.herokuapp.com/v1/users/register')
+// .then(res => res.json())
+// .then(data => console.log(data))
 
-export default class MasterSignUp extends Component {
+class MasterSignUp extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       currentStep: 1,
-      name: "",
+      fullName: "",
       email: "",
       password: "",
       weight: "",
@@ -35,10 +41,32 @@ export default class MasterSignUp extends Component {
     });
   }
 
-  handleSubmit = (event) => {
-    event.preventDefault();
+  handleInput1 = (values) => {
+    this.setState({
+      fullName: values.fullName,
+      email: values.email,
+      password: values.password
+    });
+  };
+
+  handleInput2 = (values) => {
+    this.setState({
+      weight: values.weight,
+      height: values.height,
+      waistline: values.waistline,
+      thigh: values.thigh
+    });
+  };
+
+  handleInput3 = (values) => {
+    this.setState({
+      calorieSize: values.calorieSize
+    });
+  };
+
+  handleSubmit = () => {
     const {
-      name,
+      fullName,
       email,
       password,
       weight,
@@ -48,7 +76,7 @@ export default class MasterSignUp extends Component {
       calorieSize,
     } = this.state;
     alert(`Your Sign Up detail: \n
-       Name: ${name} \n
+       FullName: ${fullName} \n
        Email: ${email} \n
        Password: ${password} \n
        Weight: ${weight} \n
@@ -57,6 +85,47 @@ export default class MasterSignUp extends Component {
        Thigh: ${thigh} \n
        CalorieSize: ${calorieSize}
        `);
+
+    this.props.getSignUpAsync({
+      fullName,
+      email,
+      password,
+      weight,
+      height,
+      waistline,
+      thigh,
+      calorieSize,
+      next:this._next
+    }
+      
+    );
+   
+
+    //  return axios.post("http://test-diet.herokuapp.com/v1/users/register", {
+    //     user: {
+    //       fullName: fullName,
+    //       email: email,
+    //       password: password,
+    //       weight: weight,
+    //       height: height,
+    //       waistline: waistline,
+    //       thigh: thigh,
+    //       calorieSize: calorieSize
+    //     }
+    //   },
+    //   { withCredentials: true }
+    //   )
+    //   .then(response => {
+    //     console.log("sign up res", response);
+    //     return response
+    //     // if (response.data.status === "created") {
+    //     //   this.props.handleSuccessfulAuth(response.data);
+    //     // }
+    //   })
+    //   .catch(error => {
+    //     console.log("sign up error", error);
+    //     return error
+    //   });
   };
 
   _next() {
@@ -67,62 +136,68 @@ export default class MasterSignUp extends Component {
       currentStep: currentStep,
     });
   }
- 
-get renderMultiStep() {
+
+  get renderMultiStep() {
     let currentStep = this.state.currentStep;
-      
-      if (currentStep <= 4) {
-        return (
-            <MultiStepProgressBar currentStep={this.state.currentStep} />
-        );
-     }
-     return null;
+
+    if (currentStep <= 4) {
+      return <MultiStepProgressBar currentStep={this.state.currentStep} />;
+    }
+    return null;
   }
 
   render() {
     return (
-        <>
+      <>
         {/* <Form onSubmit={this.handleSubmit}> */}
         <div className={styles.SignUp}>
-            {/* <Card>
+          {/* <Card>
             <CardBody> */}
-                <SignUp
-                currentStep={this.state.currentStep}
-                handleChange={this.handleChange}
-                step={this.renderMultiStep}
-                next={this._next}
-                name={this.state.name}
-                email={this.state.email}
-                password={this.state.password}
-                />
-                <SignUp2
-                currentStep={this.state.currentStep}
-                handleChange={this.handleChange}
-                step={this.renderMultiStep}
-                next={this._next}
-                weight={this.state.weight}
-                height={this.state.height}
-                waistline={this.state.waistline}
-                thigh={this.state.thigh}
-                />
-                <SignUp3
-                currentStep={this.state.currentStep}
-                handleChange={this.handleChange}
-                step={this.renderMultiStep}
-                next={this._next}
-                calorieSize={this.state.calorieSize}
-                />
-                <SignUp4
-                currentStep={this.state.currentStep}
-                handleChange={this.handleChange}
-                step={this.renderMultiStep}
-                next={this._next}
-                />
-            {/* </CardBody>
+          <SignUp
+            currentStep={this.state.currentStep}
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+            handleInput1={this.handleInput1}
+            step={this.renderMultiStep}
+            next={this._next}
+            fullName={this.state.fullName}
+            email={this.state.email}
+            password={this.state.password}
+          />
+          <SignUp2
+            currentStep={this.state.currentStep}
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+            handleInput2={this.handleInput2}
+            step={this.renderMultiStep}
+            next={this._next}
+            weight={this.state.weight}
+            height={this.state.height}
+            waistline={this.state.waistline}
+            thigh={this.state.thigh}
+          />
+          <SignUp3
+            currentStep={this.state.currentStep}
+            handleChange={this.handleChange}
+            handleInput3={this.handleInput3}
+            handleSubmit={this.handleSubmit}
+            step={this.renderMultiStep}
+            next={this._next}
+            calorieSize={this.state.calorieSize}
+          />
+          <SignUp4
+            currentStep={this.state.currentStep}
+            handleChange={this.handleChange}
+            step={this.renderMultiStep}
+            next={this._next}
+          />
+          {/* </CardBody>
             </Card> */}
-            </div>
+        </div>
         {/* </Form> */}
-        </>
-    )
+      </>
+    );
   }
 }
+
+export default connect(null, { getSignUpAsync })(MasterSignUp);

@@ -12,7 +12,17 @@ function SignUp3(props) {
     },
     onSubmit: (values) => {
       console.log("Form data", values);
-      props.next();
+      props.handleInput3(values);
+      props.handleSubmit();
+      // .then(response => {
+      //   if (response.status === 200) {
+      //     props.next();
+
+      //   } else {
+      //     alert(response);
+      //   }
+      // });
+ 
     },
     validationSchema: Yup.object({
       calorieSize: Yup.number().required("Required"),

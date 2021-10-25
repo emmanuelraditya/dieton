@@ -34,7 +34,7 @@ const SignUp4 = (props) => {
           </div>
           <form className={styles.form}>
             <br />
-            <Link to="/signinpage"><button id={styles.signInButtonPage4}>Sign In</button> </Link>
+            <Link to="/homepage"><button id={styles.signInButtonPage4}>Go to Homepage</button> </Link>
           </form>
         </div>
       </div>

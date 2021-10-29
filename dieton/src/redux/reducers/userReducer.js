@@ -14,6 +14,19 @@ function userReducer(state = initialState, action) {
         token: action.payload.token,
         loading: false,
       };
+      case "signIn/get-success":
+      return {
+        ...state,
+        signIn: action.payload.signIn,
+        loading: false,
+        error: ''
+      };
+      case "signIn/get-failed":
+      return {
+        ...state,
+        loading: false,
+        error: action.payload.error
+      };
   }
 }
 

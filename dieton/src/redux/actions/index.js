@@ -1,4 +1,4 @@
-import { signUp } from "../../services";
+import { signUp,signIn } from "../../services";
 
 export const getSignUpAsync = ({
   fullName,
@@ -61,20 +61,44 @@ export const getSignUpFailed = (error) => ({
   },
 });
 
-// export const getLoginAsync = (email, password) => {
-//     return async (dispatch) => {
-//         dispatch({type: "login/get-start"});
-//         try {
-//             const response = await login(email, password)
-//             console.log(response,"start")
-//             if(response.data) {
-//                 dispatch(getLoginSuccess(response.data));
-//             }
-//             return response
-//         } catch (error) {
-//             console.log(error);
-//         dispatch(getLoginFailed(error.message));
-//         return error
-//         }
-//     }
-// };
+
+// SignIn
+
+export const getSignInAsync = ({
+  email,
+  password,
+  history
+}) => {
+  return async (dispatch) => {
+    dispatch({ type: "signIn/get-start" });
+    try {
+      const response = await signIn({
+        email,
+        password,
+      });
+      console.log(response, "start");
+      if (response.status === 200) {
+        dispatch(getSignInSuccess(response.data));
+        history.replace("/homepage");
+      }
+   
+    } catch (error) {
+      console.log(error);
+      dispatch(getSignInFailed(error.message));
+    
+    }
+  };
+};
+export const getSignInSuccess = (signIn) => ({
+  type: "signIn/get-success",
+  payload: {
+    signIn,
+  },
+});
+
+export const getSignInFailed = (error) => ({
+  type: "signin/get-failed",
+  payload: {
+    error,
+  },
+});

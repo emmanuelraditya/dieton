@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import background from "../../assets/signUp/background.svg";
 import DietOnLogo from "../../assets/signUp/LogoDietOn.svg";
 import styles from "./signIn.module.css";
@@ -7,55 +7,53 @@ import showPasswordImg from "../../assets/signUp/showEye.svg";
 import hidePasswordImg from "../../assets/signUp/hideEye.svg";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { Link } from "react-router-dom";
-
-
-const initialValues = {
-  email: "",
-  password: "",
-};
-
-const onSubmit = (values) => {
-  console.log("Form data", values);
-};
-
-// const validate = values => {
-//   //values.email values.password
-//   //errors.email errors.password
-//   //errors.email = "Email in invalid"
-//   let errors = {}
-
-//   if(!values.email) {
-//     errors.email = "Required"
-//   }
-
-//   if(!values.password) {
-//     errors.password = "Required";
-//   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-//     errors.email = 'Invalid email address';
-//   }
-
-//   return errors
-// }
+import { connect } from "react-redux";
+import { getSignInAsync } from "../../redux/actions";
+import { useDispatch, useSelector } from "react-redux";
 
 const validationSchema = Yup.object({
   email: Yup.string().email("Invalid Format").required("Required"),
   password: Yup.string().required("Required"),
 });
 
-function SignIn() {
+function SignIn({ history }) {
+  const initialValues = {
+    email: "",
+    password: "",
+  };
+  const { loading, error, errorMessage, token } = useSelector((state) => state);
+  // const handleNextLogin = () => {
+  //   dispatch(getSignInAsync(history));
+  // };
+
+  useEffect(()=> {
+    if (token) {
+      history.push('/homepage');
+    }
+  }, [token, history]);
+
   const [password, setPassword] = useState("");
   const [isRevealPassword, setIsRevealPassword] = useState(false);
+  const dispatch = useDispatch();
+
+  const onSubmit = (values) => {
+    console.log("Form data", values);
+    dispatch(getSignInAsync(values,history));
+  };
+
   const formik = useFormik({
     initialValues,
     onSubmit,
     validationSchema,
     // validate
   });
-
+ 
   console.log("Visited field", formik.touched);
 
   return (
+    <>
+    {(loading && (<div>loading...</div>))}
+    {(error) && (<div>{errorMessage}</div>)}
     <div className={styles.signIn}>
       <div className={styles.backgroundImage}>
         <img src={background} alt="Diet On Background" />
@@ -76,24 +74,25 @@ function SignIn() {
             </p>
           </div>
           <form className={styles.form} onSubmit={formik.handleSubmit}>
+            {/* <form className={styles.form} onSubmit={handleSubmits}> */}
             {console.log(formik.values)}
-
             <p id={styles.email}>Email</p>
             <div className={styles.emailWrapper}>
-            <input
-              type="email"
-              placeholder="Enter Email Address"
-              name="email"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.email}
-            />
-            <div className={styles.formControlEmailSignIn}>
-              {formik.touched.email && formik.errors.email ? (
-                <div className={styles.error}>{formik.errors.email}</div>
-              ) : null}
-            </div>
-            </div> <br />
+              <input
+                type="email"
+                placeholder="Enter Email Address"
+                name="email"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.email}
+              />
+              <div className={styles.formControlEmailSignIn}>
+                {formik.touched.email && formik.errors.email ? (
+                  <div className={styles.error}>{formik.errors.email}</div>
+                ) : null}
+              </div>
+            </div>{" "}
+            <br />
             {/* <div id={styles.password}> */}
             <p id={styles.password}>Password</p>
             {/* </div> */}
@@ -124,29 +123,31 @@ function SignIn() {
               </div>
             </div>
             <br />
-            <Link to="/HomePage">
+            {/* <Link to="/HomePage"> */}
             <button 
             id={styles.signInButton} 
             type="submit"
+            // onClick={handleNextLogin}
             >
               Sign In
             </button>
-            </Link>
+            {/* </Link> */}
             <p id={styles.or}>Or</p>
             <button id={styles.signInGoogleButton}>
               <img src={GoogleLogo} alt="google" />
               Sign In With Google
             </button>
-           
             <div className={styles.toSignUp}>
-              <p>Didn't have an account? <a href="/signuppage">Sign Up</a> </p>
-              
+              <p>
+                Didn't have an account? <a href="/signuppage">Sign Up</a>{" "}
+              </p>
             </div>
           </form>
         </div>
       </div>
     </div>
+    </>
   );
 }
 
-export default SignIn;
+export default connect(null, { getSignInAsync })(SignIn);

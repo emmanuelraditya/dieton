@@ -67,8 +67,8 @@ export const getSignUpFailed = (error) => ({
 export const getSignInAsync = ({
   email,
   password,
-  history
-}) => {
+  
+},history) => {
   return async (dispatch) => {
     dispatch({ type: "signIn/get-start" });
     try {

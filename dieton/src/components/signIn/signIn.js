@@ -10,6 +10,7 @@ import * as Yup from "yup";
 import { connect } from "react-redux";
 import { getSignInAsync } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
+import { withRouter } from 'react-router';
 
 const validationSchema = Yup.object({
   email: Yup.string().email("Invalid Format").required("Required"),
@@ -39,6 +40,9 @@ function SignIn({ history }) {
   const onSubmit = (values) => {
     console.log("Form data", values);
     dispatch(getSignInAsync(values,history));
+  
+    
+
   };
 
   const formik = useFormik({
@@ -150,4 +154,4 @@ function SignIn({ history }) {
   );
 }
 
-export default connect(null, { getSignInAsync })(SignIn);
+export default connect(null, { getSignInAsync })(withRouter(SignIn));

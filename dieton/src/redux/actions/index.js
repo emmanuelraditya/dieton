@@ -41,6 +41,7 @@ export const getSignUpAsync = ({
       }
       //   return response;
     } catch (error) {
+      alert(error.response.data.message);
       console.log(error);
       dispatch(getSignUpFailed(error.message));
       //   return error;
@@ -80,9 +81,10 @@ export const getSignInAsync = ({
       if (response.status === 200) {
         dispatch(getSignInSuccess(response.data));
         history.replace("/homepage");
-      }
+      } 
    
     } catch (error) {
+      alert(error.response.data.message);
       console.log(error);
       dispatch(getSignInFailed(error.message));
     

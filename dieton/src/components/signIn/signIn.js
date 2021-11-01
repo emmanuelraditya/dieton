@@ -11,6 +11,8 @@ import { connect } from "react-redux";
 import { getSignInAsync } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { withRouter } from 'react-router';
+import { CircularProgress,Box } from "@mui/material";
+
 
 const validationSchema = Yup.object({
   email: Yup.string().email("Invalid Format").required("Required"),
@@ -18,11 +20,21 @@ const validationSchema = Yup.object({
 });
 
 function SignIn({ history }) {
+
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+
   const initialValues = {
     email: "",
     password: "",
   };
-  const { loading, error, errorMessage, token } = useSelector((state) => state);
+  const {  token } = useSelector((state) => state);
   // const handleNextLogin = () => {
   //   dispatch(getSignInAsync(history));
   // };
@@ -56,8 +68,14 @@ function SignIn({ history }) {
 
   return (
     <>
-    {(loading && (<div>loading...</div>))}
-    {(error) && (<div>{errorMessage}</div>)}
+ {loading ? (
+        <div className={styles.loadingBg}>
+        <Box sx={{ display: "flex", paddingLeft:"600px", paddingTop:"250px",fill: "white" }}>
+          <CircularProgress loading={loading} />
+          <p>Now Loading</p>
+        </Box>
+        </div>
+      ) : (
     <div className={styles.signIn}>
       <div className={styles.backgroundImage}>
         <img src={background} alt="Diet On Background" />
@@ -150,6 +168,7 @@ function SignIn({ history }) {
         </div>
       </div>
     </div>
+      )}
     </>
   );
 }

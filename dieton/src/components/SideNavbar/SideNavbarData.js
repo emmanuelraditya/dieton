@@ -5,13 +5,15 @@ import { ReactComponent as MealPlanIcon } from "../../assets/SideNavbar/mealPlan
 import { ReactComponent as ExercisePlanIcon } from "../../assets/SideNavbar/exercisePlanIcon.svg";
 import { ReactComponent as WeightMeasurementIcon } from "../../assets/SideNavbar/weightMeasurementIcon.svg";
 import styles from "./SideNavbar.module.css";
+import { CircularProgress } from '@mui/material';
 
 export const SideNavbarData = [
     {
         title: "home",
         icon: <HomeIcon className={styles.HomeIcon} />,
         link: "/homepage",
-        cName: "nav-text"
+        cName: "nav-text",
+        loading: <CircularProgress />
     },
     {
         title: "calorie tracker",

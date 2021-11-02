@@ -52,9 +52,6 @@ function SignIn({ history }) {
   const onSubmit = (values) => {
     console.log("Form data", values);
     dispatch(getSignInAsync(values,history));
-  
-    
-
   };
 
   const formik = useFormik({

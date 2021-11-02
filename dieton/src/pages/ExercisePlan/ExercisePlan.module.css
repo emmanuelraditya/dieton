@@ -1,4 +1,4 @@
-.calorieTrackerAll {
+.exePlanAll {
     display: flex;
   }
   
@@ -9,10 +9,10 @@
     position: fixed;
   }
   
-  .calorieTracker {
+  .exercisePlan {
     width: fit-content;
     margin-top: 180px;
-    margin-left: 30px;
+    margin-left: 300px;  /* nanti disesuaikan kalau udah ada component benerannya */
     flex: 1;
   }
   

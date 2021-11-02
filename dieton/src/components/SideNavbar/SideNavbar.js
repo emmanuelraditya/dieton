@@ -43,6 +43,7 @@ function SideNavbar() {
               id={window.location.pathname === value.link ? "active" : ""}
               onClick={() => {
                 window.location.pathname = value.link;
+                                                                
               }}
             >
               {" "}

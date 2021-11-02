@@ -47,12 +47,12 @@ export default function Collapses() {
   const [expanded, setExpanded] = React.useState('panel1');
 
   const handleChange = (panel) => (event, newExpanded) => {
-    setExpanded(newExpanded ? panel : false);
+    setExpanded(newExpanded ? panel : !false);
   };
 
   return (
     <div>
-      <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}
+      <Accordion onChange={handleChange('panel1')}
       >
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header"
         sx={{ml:50, mt:5 }}>
@@ -66,3 +66,5 @@ export default function Collapses() {
     </div>
   );
 }
+
+// expanded={expanded === 'panel1'} 

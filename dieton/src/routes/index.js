@@ -11,6 +11,7 @@ import SignInPage from '../pages/SignIn/SignInPage';
 import SignUpPage from '../pages/SignUp/SignUpPage';
 import WeightMeasurementPage from '../pages/WeightMeasurement/WeightMeasurementPage';
 import UserPage from '../pages/user profile/userPage';
+import ExercisePlanPage from '../pages/ExercisePlan/ExercisePlanPage';
 
 function Routes() {
     return (
@@ -21,6 +22,7 @@ function Routes() {
                 <Route path='/signinpage' component={SignInPage} />
                 <Route path='/homepage' component={HomePage} />
                 <Route path='/calorietrackerpage' component={CalorieTrackerPage} />
+                <Route path='/exerciseplanpage' component={ExercisePlanPage} />
                 <Route path='/mealplanpage' component={MealPlanPage} />
                 <Route path='/addmealplanpage' component={AddMealPlanPage} />
                 <Route path='/addnewmealplanpage' component={AddNewMealPlanPage} />
